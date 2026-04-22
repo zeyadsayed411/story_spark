@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:story_spark/Themes/app_colors.dart';
+import 'package:story_spark/View/Widgets/clickable_text.dart';
 import 'package:story_spark/View/Widgets/gradient_button.dart';
 import 'package:story_spark/View/Widgets/gradient_text_box_style.dart';
 import '../Widgets/text_box_style.dart';
@@ -66,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: 20),
               GradientButton(
                 text: "Next",
                 onPressed: () {},
@@ -74,6 +75,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 width: 250,
                 height: 50,
                 fontSize: 25,
+              ),
+              SizedBox(height: 20.h),
+              ClickableText(
+                text: "Skip Intro",
+                onTap: (){},
+                textColor: AppColors.black,
+                fontSize: 20,
               ),
             ],
           ),
