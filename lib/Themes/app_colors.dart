@@ -34,14 +34,14 @@ class AppColors {
   );
   static LinearGradient redPinkGradient = LinearGradient(
     colors: [
-      Color(0xFFB71C1C), // dark pink/red tone (left side)
-      Color(0xFFF8BBD0), // light pink (right side)
+      Color(0xFF8F425F), // dark pink/red tone (left side)
+      Color(0x00ff9fbf), // light pink (right side)
     ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );
 
   // Solid Colors
-  static const Color darkPurble = Color(0xFF6A1B9A);
+  static const Color darkPurble = Color(0xFF8F425F);
   static const Color black = Color(0xFF000000);
 }
