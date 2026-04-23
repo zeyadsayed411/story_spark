@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:story_spark/View/Screens/home_page.dart';
 import 'package:story_spark/View/Screens/welcome_screen.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const WelcomeScreen(),
+      child: const HomePage(),
     );
   }
 }

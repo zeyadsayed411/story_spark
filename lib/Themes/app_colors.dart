@@ -44,4 +44,8 @@ class AppColors {
   // Solid Colors
   static const Color darkPurble = Color(0xFF6A1B9A);
   static const Color black = Color(0xFF000000);
+  static const Color darkReddishPurple = Color(0xFF9C3F6D);
+  static const Color softPink = Color(0xFFF6D5DB);
+  static const Color grey = Color(0xFFD3D3D3);
+  static const Color greyWhite = Colors.white54;
 }
