@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class GradientTextBoxStyle extends StatelessWidget {
   final String text;
-  final int textSize;
+  final double textSize;
   final FontWeight textStyle;
   final LinearGradient textGradient;
 
@@ -23,10 +23,7 @@ class GradientTextBoxStyle extends StatelessWidget {
       child: Text(
         text,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: textSize.sp,
-          fontWeight: textStyle,
-        ),
+        style: TextStyle(fontSize: textSize.sp, fontWeight: textStyle),
       ),
     );
   }

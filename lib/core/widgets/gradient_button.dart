@@ -5,9 +5,10 @@ class GradientButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final LinearGradient buttonGradient;
-  final double width; // ✅ control width
-  final double height; // ✅ control height
-  final double fontSize; // ✅ control text size
+  final double width;
+  final double height;
+  final double fontSize;
+  final Icon? icon;
 
   const GradientButton({
     super.key,
@@ -17,7 +18,7 @@ class GradientButton extends StatelessWidget {
     required this.width,
     required this.height,
     required this.fontSize,
-    // default text size
+    this.icon,
   });
 
   @override
@@ -32,7 +33,7 @@ class GradientButton extends StatelessWidget {
           ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          padding: EdgeInsets.zero, // ✅ so gradient fills entire button
+          padding: EdgeInsets.zero,
         ),
         onPressed: onPressed,
         child: Ink(
@@ -49,11 +50,13 @@ class GradientButton extends StatelessWidget {
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: fontSize.sp, // ✅ dynamic text size
+                    fontSize: fontSize.sp,
                   ),
                 ),
-                const SizedBox(width: 8),
-                const Icon(Icons.arrow_forward, color: Colors.white),
+                if (icon != null) ...[
+                  const SizedBox(width: 8),
+                  icon!,
+                ]
               ],
             ),
           ),

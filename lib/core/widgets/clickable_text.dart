@@ -6,7 +6,7 @@ class ClickableText extends StatelessWidget {
   final VoidCallback onTap;
   final Color textColor;
   final double fontSize;
-  final FontWeight? fontWeight;
+  final FontWeight fontWeight;
 
   const ClickableText({
     super.key,
@@ -14,7 +14,7 @@ class ClickableText extends StatelessWidget {
     required this.onTap,
     required this.textColor,
     required this.fontSize,
-    this.fontWeight,
+    this.fontWeight = FontWeight.normal,
   });
 
   @override

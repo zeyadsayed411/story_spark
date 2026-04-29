@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:story_spark/View/Screens/onboarding_screen.sdart/onboarding_screen1.dart.dart';
-import 'package:story_spark/View/Screens/onboarding_screen.sdart/onboarding_screen3.dart.dart';
-import 'package:story_spark/View/Screens/hero_screen.dart';
-import 'package:story_spark/View/Screens/onboarding_screen.sdart/onboarding_screen2.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+import 'package:story_spark/core/constants/route_names.dart';
+import 'package:story_spark/features/onboarding/presentation/screens/onboarding_screen.dart';
+import 'package:story_spark/features/auth/presentation/screens/login_screen.dart';
+import 'package:story_spark/features/auth/presentation/screens/sign_up_screen.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -18,25 +23,18 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-
           home: child,
-
+          initialRoute: RouteNames.onboarding,
           routes: {
-            OnboardingScreen1.routeName: (context) => const OnboardingScreen1(),
-            OnboardingScreen2.routeName: (context) => const OnboardingScreen2(),
-
-            OnboardingScreen3.routeName: (context) => const OnboardingScreen3(),
-
-            HeroScreen.routeName: (context) => const HeroScreen(),
+            RouteNames.onboarding: (context) => const OnboardingScreen(),
+            RouteNames.signUp: (context) => const SignUpScreen(),
+            RouteNames.login: (context) => const LoginScreen(),
           },
         );
       },
-
-      child: const OnboardingScreen1(),
     );
   }
 }
