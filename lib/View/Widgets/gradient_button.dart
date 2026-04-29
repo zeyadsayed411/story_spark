@@ -30,7 +30,7 @@ class GradientButton extends StatelessWidget {
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(50),
           ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -40,7 +40,7 @@ class GradientButton extends StatelessWidget {
         child: Ink(
           decoration: BoxDecoration(
             gradient: buttonGradient,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(50),
           ),
           child: Center(
             child: Row(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:story_spark/View/Widgets/button.dart';
+import 'package:story_spark/View/Widgets/gradient_button.dart';
 import 'package:story_spark/View/Widgets/upload_story_cover.dart';
 import 'package:story_spark/View/Widgets/write_text_box.dart';
 import '../../Themes/app_colors.dart';
@@ -70,7 +71,9 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 2),
+                        horizontal: 25,
+                        vertical: 2,
+                      ),
                       child: TextBoxtStyle(
                         text: "STORY TITLE",
                         textSize: 16,
@@ -85,10 +88,12 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                       containerColor: AppColors.greyWhite,
                       containerHeight: 48,
                     ),
-                    SizedBox(height: 20.h,),
+                    SizedBox(height: 20.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 2),
+                        horizontal: 25,
+                        vertical: 2,
+                      ),
                       child: TextBoxtStyle(
                         text: "CHOOSE CATEGORY",
                         textSize: 16,
@@ -103,10 +108,12 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                       containerColor: AppColors.greyWhite,
                       containerHeight: 48,
                     ),
-                    SizedBox(height: 20.h,),
+                    SizedBox(height: 20.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 25, vertical: 2),
+                        horizontal: 25,
+                        vertical: 2,
+                      ),
                       child: TextBoxtStyle(
                         text: "Chapter Title",
                         textSize: 16,
@@ -123,16 +130,31 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 15.h,),
+                SizedBox(height: 15.h),
                 Button(
-                    text: "Add Chapter",
-                    onPressed: (){},
-                    buttonColor: AppColors.grey,
-                    width: 150,
-                    height: 30,
-                    fontSize: 10,
-                    textColor: AppColors.black)
+                  icon: Icons.add_box_outlined,
+                  iconColor: AppColors.black,
+                  iconSize: 22,
+                  text: "Add Chapter",
+                  onPressed: () {},
+                  buttonColor: AppColors.grey,
+                  width: 350,
+                  height: 55,
+                  fontSize: 20,
+                  textColor: AppColors.black,
 
+                ),
+                SizedBox(height: 15.h),
+                GradientButton(
+                  text: "",
+                  onPressed: (){},
+                  buttonGradient: AppColors.redPinkGradient,
+                  width: 350,
+                  height: 55,
+                  fontSize: 20,
+                  textColor: Colors.white,
+                ),
+                SizedBox(height: 25.h),
               ],
             ),
           ),
