@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
 import 'package:story_spark/core/constants/route_names.dart';
+import 'package:story_spark/features/onboarding/presentation/screens/splash_screen.dart';
 import 'package:story_spark/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:story_spark/features/auth/presentation/screens/login_screen.dart';
 import 'package:story_spark/features/auth/presentation/screens/sign_up_screen.dart';
@@ -27,11 +28,12 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           home: child,
-          initialRoute: RouteNames.onboarding,
+          initialRoute: RouteNames.splash,
           routes: {
-            RouteNames.onboarding: (context) => const OnboardingScreen(),
-            RouteNames.signUp: (context) => const SignUpScreen(),
-            RouteNames.login: (context) => const LoginScreen(),
+            RouteNames.splash: (context) => SplashScreen(),
+            RouteNames.onboarding: (context) => OnboardingScreen(),
+            RouteNames.signUp: (context) => SignUpScreen(),
+            RouteNames.login: (context) => LoginScreen(),
           },
         );
       },

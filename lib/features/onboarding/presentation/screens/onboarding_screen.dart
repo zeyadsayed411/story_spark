@@ -51,11 +51,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             _currentIndex = index;
           });
         },
-        children: [
-          _buildPage1(),
-          _buildPage2(),
-          _buildPage3(),
-        ],
+        children: [_buildPage1(), _buildPage2(), _buildPage3()],
       ),
     );
   }
@@ -112,7 +108,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               IndicatorWidget(currentIndex: 0),
               SizedBox(height: 30.h),
               GradientButton(
-                icon: const Icon(Icons.arrow_forward, color: Colors.white, size: 22),
+                icon: const Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                  size: 22,
+                ),
                 text: "Next",
                 onPressed: _nextPage,
                 buttonGradient: AppColors.redPinkGradient,
@@ -167,7 +167,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               SizedBox(height: 30.h),
               GradientButton(
                 text: "Next",
-                icon: const Icon(Icons.arrow_forward, color: Colors.white, size: 22),
+                icon: const Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                  size: 22,
+                ),
                 onPressed: _nextPage,
                 buttonGradient: AppColors.redPinkGradient,
                 width: 250,
@@ -221,7 +225,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               SizedBox(height: 30.h),
               GradientButton(
                 text: "Get Started",
-                icon: const Icon(Icons.arrow_forward, color: Colors.white, size: 22),
+                icon: const Icon(
+                  Icons.arrow_forward,
+                  color: Colors.white,
+                  size: 22,
+                ),
                 onPressed: _nextPage,
                 buttonGradient: AppColors.redPinkGradient,
                 width: 250,

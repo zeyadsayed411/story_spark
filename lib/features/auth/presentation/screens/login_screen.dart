@@ -49,25 +49,11 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     if (result is SucessFB) {
-      if (!mounted) return;
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          title: const Text("✨ Success!"),
-          content: const Text("Account created successfully!"),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context); // Close dialog
-                Navigator.pushReplacementNamed(context, RouteNames.signUp);
-              },
-              child: const Text("OK", style: TextStyle(color: Color(0xFF8F425F), fontWeight: FontWeight.bold)),
-            ),
-          ],
-        ),
-      );
+      _showSnackBar("✨ Account created successfully!", Colors.pink.shade400);
+      Navigator.pushReplacementNamed(
+        context,
+        RouteNames.signUp,
+      ); // Or appropriate route
     } else if (result is ErrorFB) {
       _showSnackBar((result as ErrorFB).errorMessage, Colors.red.shade400);
     }
@@ -487,7 +473,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       letterSpacing: 0.5,
                     ),
                   ),
-                  // const SizedBox(width: 8),
                   const Icon(Icons.auto_awesome, color: Colors.white, size: 10),
                 ],
               ),
