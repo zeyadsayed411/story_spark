@@ -3,23 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WriteTextBox extends StatelessWidget {
   final String hintText;
-  final IconData icon;
-  final Color iconColor;
+  final IconData? icon;
+  final Color? iconColor;
   final Color textColor;
   final Color containerColor;
   final double fontSize;
-  final double iconSize;
+  final double? iconSize;
   final double? containerWidth;
   final double? containerHeight;
 
   const WriteTextBox({
     super.key,
     required this.hintText,
-    required this.icon,
-    required this.iconColor,
+    this.icon,
+    this.iconColor,
     required this.textColor,
     required this.fontSize,
-    required this.iconSize,
+    this.iconSize,
     this.containerWidth,
     this.containerHeight,
     required this.containerColor,
@@ -37,6 +37,8 @@ class WriteTextBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(width: 12),
             Icon(icon, color: iconColor, size: iconSize),

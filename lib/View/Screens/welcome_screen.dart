@@ -75,11 +75,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 width: 250,
                 height: 50,
                 fontSize: 25,
+                textColor: Colors.white,
               ),
               SizedBox(height: 20.h),
               ClickableText(
                 text: "Skip Intro",
-                onTap: (){},
+                onTap: () {},
                 textColor: AppColors.black,
                 fontSize: 20,
               ),

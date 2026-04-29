@@ -5,9 +5,10 @@ class GradientButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final LinearGradient buttonGradient;
-  final double width; // ✅ control width
-  final double height; // ✅ control height
-  final double fontSize; // ✅ control text size
+  final double width;
+  final double height;
+  final double fontSize;
+  final Color textColor;
 
   const GradientButton({
     super.key,
@@ -17,6 +18,7 @@ class GradientButton extends StatelessWidget {
     required this.width,
     required this.height,
     required this.fontSize,
+    required this.textColor,
     // default text size
   });
 
@@ -47,7 +49,7 @@ class GradientButton extends StatelessWidget {
                 Text(
                   text,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: textColor,
                     fontWeight: FontWeight.bold,
                     fontSize: fontSize.sp, // ✅ dynamic text size
                   ),
