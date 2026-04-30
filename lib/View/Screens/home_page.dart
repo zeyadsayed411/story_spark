@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:story_spark/Themes/app_colors.dart';
-import 'package:story_spark/View/Widgets/clickable_photo.dart';
-import 'package:story_spark/View/Widgets/custom_image_widget.dart';
-import 'package:story_spark/View/Widgets/image_with_button.dart';
-import 'package:story_spark/View/Widgets/text_box_style.dart';
-import 'package:story_spark/View/Widgets/write_text_box.dart';
+import 'package:story_spark/core/themes/app_colors.dart';
+import 'package:story_spark/core/constants/route_names.dart';
+import 'package:story_spark/core/widgets/clickable_photo.dart';
+import 'package:story_spark/core/widgets/custom_image_widget.dart';
+import 'package:story_spark/core/widgets/image_with_button.dart';
+import 'package:story_spark/core/widgets/text_box_style.dart';
+import 'package:story_spark/core/widgets/write_text_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           height: 40,
           width: 40,
         ),
-        title: TextBoxtStyle(
+        title: TextBoxStyle(
           text: "Magical tales",
           textSize: 25,
           textColor: AppColors.darkReddishPurple,
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                     containerHeight: 50,
                   ),
                 ),
-                TextBoxtStyle(
+                TextBoxStyle(
                   text: "Discoverd theme",
                   textSize: 25,
                   textColor: AppColors.black,
@@ -87,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 SizedBox(height: 10.h,),
-                TextBoxtStyle(
+                TextBoxStyle(
                   text: "Story of the week",
                   textSize: 25,
                   textColor: AppColors.black,
@@ -96,7 +97,9 @@ class _HomePageState extends State<HomePage> {
                 ImageWithButton(
                   imagePath: "assets/images/Story_Poster.png",
                   buttonText: "Begin story",
-                  onPressed: (){},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RouteNames.createStory);
+                  },
                   height: 400,
                   width: 400,
                   buttonGradient: AppColors.redPinkGradient, textSize: 20,

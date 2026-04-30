@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:story_spark/View/Widgets/button.dart';
-import 'package:story_spark/View/Widgets/gradient_button.dart';
-import 'package:story_spark/View/Widgets/upload_story_cover.dart';
-import 'package:story_spark/View/Widgets/write_text_box.dart';
-import '../../Themes/app_colors.dart';
-import '../Widgets/custom_image_widget.dart';
-import '../Widgets/text_box_style.dart';
+import 'package:story_spark/core/widgets/button.dart';
+import 'package:story_spark/core/widgets/gradient_button.dart';
+import 'package:story_spark/core/widgets/upload_story_cover.dart';
+import 'package:story_spark/core/widgets/write_text_box.dart';
+import 'package:story_spark/core/themes/app_colors.dart';
+import 'package:story_spark/core/widgets/custom_image_widget.dart';
+import 'package:story_spark/core/widgets/text_box_style.dart';
 
 class CreateStoryScreen extends StatefulWidget {
   const CreateStoryScreen({super.key});
@@ -26,7 +26,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
           height: 40,
           width: 40,
         ),
-        title: TextBoxtStyle(
+        title: TextBoxStyle(
           text: "Magical tales",
           textSize: 25,
           textColor: AppColors.darkReddishPurple,
@@ -41,18 +41,18 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
           child: Center(
             child: Column(
               children: [
-                TextBoxtStyle(
+                TextBoxStyle(
                   text: "Create New Magic",
                   textSize: 30,
                   textColor: AppColors.darkReddishPurple,
                   textStyle: FontWeight.bold,
                 ),
-                TextBoxtStyle(
+                TextBoxStyle(
                   text: "Every great adventure begins with a",
                   textSize: 18,
                   textColor: AppColors.black,
                 ),
-                TextBoxtStyle(
+                TextBoxStyle(
                   text: "single word.",
                   textSize: 18,
                   textColor: AppColors.black,
@@ -74,7 +74,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                         horizontal: 25,
                         vertical: 2,
                       ),
-                      child: TextBoxtStyle(
+                      child: TextBoxStyle(
                         text: "STORY TITLE",
                         textSize: 16,
                         textColor: AppColors.darkReddishPurple,
@@ -94,7 +94,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                         horizontal: 25,
                         vertical: 2,
                       ),
-                      child: TextBoxtStyle(
+                      child: TextBoxStyle(
                         text: "CHOOSE CATEGORY",
                         textSize: 16,
                         textColor: AppColors.darkReddishPurple,
@@ -114,7 +114,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                         horizontal: 25,
                         vertical: 2,
                       ),
-                      child: TextBoxtStyle(
+                      child: TextBoxStyle(
                         text: "Chapter Title",
                         textSize: 16,
                         textColor: AppColors.darkReddishPurple,

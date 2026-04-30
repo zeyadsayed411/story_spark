@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class TextBoxtStyle extends StatelessWidget {
+class TextBoxStyle extends StatelessWidget {
   final String text;
   final double textSize;
   final FontWeight? textStyle;
   final Color textColor;
 
-  const TextBoxtStyle({
+  const TextBoxStyle({
+    super.key,
     required this.text,
     required this.textSize,
     required this.textColor,
@@ -16,15 +17,13 @@ class TextBoxtStyle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontSize: textSize.sp,
-          fontWeight: textStyle,
-          color: textColor,
-        ),
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontSize: textSize.sp,
+        fontWeight: textStyle,
+        color: textColor,
       ),
     );
   }

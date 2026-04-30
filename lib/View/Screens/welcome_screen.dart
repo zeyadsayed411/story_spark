@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:story_spark/Themes/app_colors.dart';
-import 'package:story_spark/View/Widgets/clickable_text.dart';
-import 'package:story_spark/View/Widgets/gradient_button.dart';
-import 'package:story_spark/View/Widgets/gradient_text_box_style.dart';
-import '../Widgets/text_box_style.dart';
+import 'package:story_spark/core/themes/app_colors.dart';
+import 'package:story_spark/core/widgets/clickable_text.dart';
+import 'package:story_spark/core/widgets/gradient_button.dart';
+import 'package:story_spark/core/widgets/gradient_text_box_style.dart';
+import 'package:story_spark/core/widgets/text_box_style.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -32,22 +32,22 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
               Column(
                 children: [
-                  TextBoxtStyle(
+                  TextBoxStyle(
                     text: "Welcome to the",
                     textSize: 38,
-                    textColor: AppColors.darkPurble,
+                    textColor: AppColors.darkPurple,
                     textStyle: FontWeight.bold,
                   ),
                   GradientTextBoxStyle(
                     text: "magical kids",
                     textSize: 35,
                     textStyle: FontWeight.bold,
-                    textGradient: AppColors.purbleBlueGradient,
+                    textGradient: AppColors.purpleBlueGradient,
                   ),
-                  TextBoxtStyle(
+                  TextBoxStyle(
                     text: "story world",
                     textSize: 34,
-                    textColor: AppColors.darkPurble,
+                    textColor: AppColors.darkPurple,
                     textStyle: FontWeight.bold,
                   ),
                 ],
@@ -55,12 +55,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               SizedBox(height: 10.h),
               Column(
                 children: [
-                  TextBoxtStyle(
+                  TextBoxStyle(
                     text: "Where every dream becomes a",
                     textSize: 19.5,
                     textColor: AppColors.black,
                   ),
-                  TextBoxtStyle(
+                  TextBoxStyle(
                     text: "story and every child is a hero",
                     textSize: 21,
                     textColor: AppColors.black,
