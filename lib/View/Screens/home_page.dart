@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:story_spark/Themes/app_colors.dart';
-import 'package:story_spark/View/Widgets/clickable_photo.dart';
-import 'package:story_spark/View/Widgets/custom_image_widget.dart';
-import 'package:story_spark/View/Widgets/image_with_button.dart';
 import 'package:story_spark/View/Widgets/text_box_style.dart';
-import 'package:story_spark/View/Widgets/write_text_box.dart';
+import '../../Themes/app_colors.dart';
+import '../Widgets/clickable_photo.dart';
+import '../Widgets/custom_image_widget.dart';
+import '../Widgets/image_with_button.dart';
+import '../Widgets/write_text_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
@@ -53,11 +55,14 @@ class _HomePageState extends State<HomePage> {
                     containerHeight: 50,
                   ),
                 ),
-                TextBoxtStyle(
-                  text: "Discoverd theme",
-                  textSize: 25,
-                  textColor: AppColors.black,
-                  textStyle: FontWeight.bold,
+                Padding(
+                  padding: const EdgeInsets.only(right: 150),
+                  child: TextBoxtStyle(
+                    text: "Discoverd theme",
+                    textSize: 25,
+                    textColor: AppColors.black,
+                    textStyle: FontWeight.bold,
+                  ),
                 ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -86,21 +91,78 @@ class _HomePageState extends State<HomePage> {
                     ],
                   ),
                 ),
-                SizedBox(height: 10.h,),
+                SizedBox(height: 10.h),
+                ImageWithButton(
+                  imagePath: "assets/images/Story_Poster.png",
+                  buttonText: "Begin story",
+                  onPressed: () {},
+                  height: 300,
+                  width: 320,
+                  textSize: 20,
+                ),
                 TextBoxtStyle(
                   text: "Story of the week",
                   textSize: 25,
                   textColor: AppColors.black,
                   textStyle: FontWeight.bold,
                 ),
+                SizedBox(height: 20.h),
                 ImageWithButton(
-                  imagePath: "assets/images/Story_Poster.png",
+                  imagePath: "assets/images/dragon_story.png",
                   buttonText: "Begin story",
-                  onPressed: (){},
-                  height: 400,
-                  width: 400,
-                  buttonGradient: AppColors.redPinkGradient, textSize: 20,
+                  onPressed: () {},
+                  height: 300,
+                  width: 320,
+                  buttonGradient: AppColors.redPinkGradient,
+                  textSize: 20,
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 100),
+                  child: TextBoxtStyle(
+                    text: "The Dragon's Tea Party",
+                    textSize: 20,
+                    textColor: AppColors.black,
+                    textStyle: FontWeight.bold,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 230),
+                  child: TextBoxtStyle(
+                    text: "By Oliver Oak",
+                    textSize: 15,
+                    textColor: AppColors.black,
+                    textStyle: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 25),
+                ImageWithButton(
+                  imagePath: "assets/images/Midnight in the Library_story.png",
+                  buttonText: "Begin story",
+                  onPressed: () {},
+                  height: 300,
+                  width: 320,
+                  buttonGradient: AppColors.redPinkGradient,
+                  textSize: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 110),
+                  child: TextBoxtStyle(
+                    text: "Midnight in the library",
+                    textSize: 20,
+                    textColor: AppColors.black,
+                    textStyle: FontWeight.bold,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 170),
+                  child: TextBoxtStyle(
+                    text: "By Sarah SpellWeaver",
+                    textSize: 15,
+                    textColor: AppColors.black,
+                    textStyle: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 25.h),
               ],
             ),
           ),

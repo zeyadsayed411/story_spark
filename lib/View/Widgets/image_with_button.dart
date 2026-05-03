@@ -9,7 +9,7 @@ class ImageWithButton extends StatelessWidget {
   final double width;
   final Gradient? buttonGradient; // optional gradient
   final Color? buttonColor; // optional solid color
-  final double textSize; // optional text size
+  final double textSize; // text size
 
   const ImageWithButton({
     Key? key,
@@ -30,33 +30,42 @@ class ImageWithButton extends StatelessWidget {
       width: width.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(60),
-        image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
       ),
       child: Align(
-        alignment: AlignmentGeometry.bottomLeft,
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 40, horizontal: 35),
-          padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 25),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
-            gradient: buttonGradient,
-            color: buttonColor,
+        alignment: Alignment.bottomLeft,
+        child: ElevatedButton(
+          onPressed: onPressed,
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ).copyWith(
+            backgroundColor: MaterialStateProperty.all(Colors.transparent),
+            foregroundColor: MaterialStateProperty.all(Colors.white),
           ),
-          child: ElevatedButton(
-            onPressed: onPressed,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(25),
+              gradient: buttonGradient ??
+                  const LinearGradient(
+                    colors: [Colors.pink, Colors.red],
+                  ),
+              color: buttonColor,
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
             child: Text(
               buttonText,
               style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
                 fontSize: textSize.sp,
-              ),
-            ),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              shadowColor: Colors.transparent,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
               ),
             ),
           ),

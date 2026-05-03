@@ -9,6 +9,9 @@ class GradientButton extends StatelessWidget {
   final double height;
   final double fontSize;
   final Color textColor;
+  final IconData? icon;
+  final Color? iconColor;
+  final double? iconSize;
 
   const GradientButton({
     super.key,
@@ -19,6 +22,9 @@ class GradientButton extends StatelessWidget {
     required this.height,
     required this.fontSize,
     required this.textColor,
+    this.icon,
+    this.iconColor,
+    this.iconSize,
     // default text size
   });
 
@@ -34,7 +40,7 @@ class GradientButton extends StatelessWidget {
           ),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
-          padding: EdgeInsets.zero, // ✅ so gradient fills entire button
+          padding: EdgeInsets.zero,
         ),
         onPressed: onPressed,
         child: Ink(
@@ -51,11 +57,11 @@ class GradientButton extends StatelessWidget {
                   style: TextStyle(
                     color: textColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: fontSize.sp, // ✅ dynamic text size
+                    fontSize: fontSize.sp,
                   ),
                 ),
                 const SizedBox(width: 8),
-                const Icon(Icons.arrow_forward, color: Colors.white),
+                 Icon( icon , color: iconColor,size: iconSize,),
               ],
             ),
           ),
