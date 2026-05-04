@@ -6,6 +6,11 @@ import '../Widgets/clickable_photo.dart';
 import '../Widgets/custom_image_widget.dart';
 import '../Widgets/image_with_button.dart';
 import '../Widgets/write_text_box.dart';
+import '../../Themes/app_colors.dart';
+import '../Widgets/clickable_photo.dart';
+import '../Widgets/custom_image_widget.dart';
+import '../Widgets/image_with_button.dart';
+import '../Widgets/write_text_box.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

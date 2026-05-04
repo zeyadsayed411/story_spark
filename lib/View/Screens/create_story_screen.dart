@@ -125,7 +125,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                 ),
                 SizedBox(height: 15.h),
                 GradientButton(
-                  text: "Save Story",
+                  text: "",
                   onPressed: () {},
                   buttonGradient: AppColors.redPinkGradient,
                   width: 350,

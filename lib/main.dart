@@ -3,12 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:story_spark/View/Screens/create_story_screen.dart';
 import 'package:story_spark/View/Screens/home_page.dart';
+import 'package:story_spark/View/Screens/story_view.dart';
 import 'package:story_spark/View/Widgets/bottom_navigator.dart';
 import 'package:story_spark/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:story_spark/core/constants/route_names.dart';
 import 'package:story_spark/features/auth/presentation/screens/login_screen.dart';
-import 'package:story_spark/features/create_story/story_view.dart';
-import 'package:story_spark/features/create_story/welcome_screen.dart';
 import 'package:story_spark/features/onboarding/presentation/screens/onboarding_screen.dart';
 import 'package:story_spark/features/onboarding/presentation/screens/splash_screen.dart';
 import 'firebase_options.dart';
@@ -31,35 +30,23 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: child,
           initialRoute: RouteNames.splash,
           routes: {
-            RouteNames.splash: (context) => SplashScreen(),
-            RouteNames.onboarding: (context) => OnboardingScreen(),
-            RouteNames.signUp: (context) => SignUpScreen(),
-            RouteNames.login: (context) => LoginScreen(),
-            RouteNames.home: (context) => const HomePage(),
+            RouteNames.splash: (context) => const SplashScreen(),
+            RouteNames.onboarding: (context) => const OnboardingScreen(),
+            RouteNames.signUp: (context) => const SignUpScreen(),
+            RouteNames.login: (context) => const LoginScreen(),
+            RouteNames.home: (context) => const BottomNavigator(
+                  pages: [
+                    HomePage(),
+                    StoryView(),
+                    CreateStoryScreen(),
+                  ],
+                ),
             RouteNames.createStory: (context) => const CreateStoryScreen(),
           },
         );
       },
-      child: const WelcomeScreen(),
     );
   }
-}
-
-Widget build(BuildContext context) {
-  return ScreenUtilInit(
-    designSize: const Size(375, 812), // iPhone X size (example)
-    minTextAdapt: true,
-    splitScreenMode: true,
-    builder: (context, child) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: BottomNavigator(
-          pages: const [HomePage(), StoryView(), CreateStoryScreen()],
-        ),
-      );
-    },
-  );
 }
