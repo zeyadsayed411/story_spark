@@ -36,7 +36,7 @@ class AppColors {
   static const LinearGradient redPinkGradient = LinearGradient(
     colors: [
       Color(0xFF8F425F), // dark pink/red tone
-      Color(0x00FF9FBF), // light pink
+      Color(0xFFFF9FBF), // light pink
     ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,

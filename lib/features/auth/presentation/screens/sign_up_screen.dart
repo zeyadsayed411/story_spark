@@ -274,7 +274,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                                   if (!mounted) return;
 
-                                  if (result is SucessFB) {
+                                  if (result is SuccessFB) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                         content: Text(

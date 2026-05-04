@@ -1,7 +1,7 @@
 sealed class ResultFB<T> {}
 
-class SucessFB<T> extends ResultFB<T> {
-  SucessFB({this.data});
+class SuccessFB<T> extends ResultFB<T> {
+  SuccessFB({this.data});
   T? data;
 }
 

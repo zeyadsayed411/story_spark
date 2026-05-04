@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:story_spark/core/widgets/button.dart';
-import 'package:story_spark/core/widgets/gradient_button.dart';
-import 'package:story_spark/core/widgets/upload_story_cover.dart';
-import 'package:story_spark/core/widgets/write_text_box.dart';
+import 'package:story_spark/View/Widgets/button.dart';
+import 'package:story_spark/View/Widgets/gradient_button.dart';
+import 'package:story_spark/View/Widgets/upload_story_cover.dart';
+import 'package:story_spark/View/Widgets/write_text_box.dart';
 import 'package:story_spark/core/themes/app_colors.dart';
-import 'package:story_spark/core/widgets/custom_image_widget.dart';
-import 'package:story_spark/core/widgets/text_box_style.dart';
+import '../Widgets/custom_image_widget.dart';
+import '../Widgets/text_box_style.dart';
 
 class CreateStoryScreen extends StatefulWidget {
   const CreateStoryScreen({super.key});
@@ -26,7 +26,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
           height: 40,
           width: 40,
         ),
-        title: TextBoxStyle(
+        title: TextBoxtStyle(
           text: "Magical tales",
           textSize: 25,
           textColor: AppColors.darkReddishPurple,
@@ -41,18 +41,18 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
           child: Center(
             child: Column(
               children: [
-                TextBoxStyle(
+                TextBoxtStyle(
                   text: "Create New Magic",
                   textSize: 30,
                   textColor: AppColors.darkReddishPurple,
                   textStyle: FontWeight.bold,
                 ),
-                TextBoxStyle(
+                TextBoxtStyle(
                   text: "Every great adventure begins with a",
                   textSize: 18,
                   textColor: AppColors.black,
                 ),
-                TextBoxStyle(
+                TextBoxtStyle(
                   text: "single word.",
                   textSize: 18,
                   textColor: AppColors.black,
@@ -74,7 +74,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                         horizontal: 25,
                         vertical: 2,
                       ),
-                      child: TextBoxStyle(
+                      child: TextBoxtStyle(
                         text: "STORY TITLE",
                         textSize: 16,
                         textColor: AppColors.darkReddishPurple,
@@ -94,27 +94,7 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                         horizontal: 25,
                         vertical: 2,
                       ),
-                      child: TextBoxStyle(
-                        text: "CHOOSE CATEGORY",
-                        textSize: 16,
-                        textColor: AppColors.darkReddishPurple,
-                        textStyle: FontWeight.bold,
-                      ),
-                    ),
-                    WriteTextBox(
-                      hintText: "Tell Us Your Magic..",
-                      textColor: AppColors.grey,
-                      fontSize: 20,
-                      containerColor: AppColors.greyWhite,
-                      containerHeight: 48,
-                    ),
-                    SizedBox(height: 20.h),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 25,
-                        vertical: 2,
-                      ),
-                      child: TextBoxStyle(
+                      child: TextBoxtStyle(
                         text: "Chapter Title",
                         textSize: 16,
                         textColor: AppColors.darkReddishPurple,
@@ -142,17 +122,19 @@ class _CreateStoryScreemState extends State<CreateStoryScreen> {
                   height: 55,
                   fontSize: 20,
                   textColor: AppColors.black,
-
                 ),
                 SizedBox(height: 15.h),
                 GradientButton(
-                  text: "",
-                  onPressed: (){},
+                  text: "Save Story",
+                  onPressed: () {},
                   buttonGradient: AppColors.redPinkGradient,
                   width: 350,
                   height: 55,
                   fontSize: 20,
                   textColor: Colors.white,
+                  icon: Icons.save_alt,
+                  iconColor: Colors.white,
+                  iconSize: 20,
                 ),
                 SizedBox(height: 25.h),
               ],

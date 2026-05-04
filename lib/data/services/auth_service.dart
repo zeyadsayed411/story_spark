@@ -38,7 +38,7 @@ class AuthService {
       await addUser(user).timeout(const Duration(seconds: 10));
       
       print("Registration complete!");
-      return SucessFB(data: user);
+      return SuccessFB(data: user);
     } on FirebaseAuthException catch (e) {
       print("Firebase Auth Error: ${e.code}");
       if (e.code == 'weak-password') {
@@ -67,7 +67,7 @@ class AuthService {
           )
           .timeout(const Duration(seconds: 10));
       print("Login successful!");
-      return SucessFB(data: credential);
+      return SuccessFB(data: credential);
     } catch (e) {
       print("Login Error: $e");
       return ErrorFB(e.toString());

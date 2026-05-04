@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       if (!mounted) return;
 
-      if (result is SucessFB) {
+      if (result is SuccessFB) {
         _showSnackBar("✨ Welcome back to the realm!", Colors.pink.shade400);
         Navigator.pushReplacementNamed(context, RouteNames.home);
       } else if (result is ErrorFB) {
